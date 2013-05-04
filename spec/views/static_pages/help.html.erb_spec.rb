@@ -1,5 +1,10 @@
-require 'spec_helper'
+it "should have the h1 'Help'" do
+visit '/static_pages/help'
+page.should have_selector('h1', :text => 'Help')
+end
 
-describe "static_pages/help.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+it "should have the title 'Help'" do
+visit "/static_pages/help"
+page.should have_selector('title', :text=>"Ruby on Rails Tutorial
+Sample App | Help")
 end
